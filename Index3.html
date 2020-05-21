@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01HTML_BASIC3</title>
+</head>
+<body>
+<h1>HOW-TO: Programma na Python, Chast' 3</h1>
+<ul>
+    <li><em>Programma na Python - chast' 1</em></li>
+    <li><em>Programma na Python - chast' 1</em></li>
+    <li><em>Programma na Python - chast' 1</em></li>
+</ul>
+<h2>Soderzhanie</h2>
+<h3>HOW-TO: Programma na Python, Chast' 3</h3>
+<ul>
+    <li>
+        <ins>Moduli</ins>
+    </li>
+    <li>
+        <ins>Funkcii</ins>
+    </li>
+</ul>
+<hr>
+<p>V proshlyj raz my izuchali spiski, podstanovku peremennyh, kommentarii, sravnenie i<br>
+    prisvoenie, operatory <strong>if</strong> i <strong>while</strong>. Ja obeshchal, chto v etoj chasti my izuchim
+    moduli i<br>
+    funkcii. Davajte nachnem.</p>
+<h2>Moduli</h2>
+<p>Moduli predlagajut sposob rasshirit' programmirovanie na Python. Vy mozhete sozdat'<br>
+    svoi moduli, ispol'zovat' te, kotorye postavliajutsia s Python ili kotorye napisali<br>
+    drugie. V samom Python est' sotni modulej, kotorye oblegchajut napisanie programm.<br>
+    Spisok modulej, postavliaemyh s Python, nohoditsia po adresu:<br>
+    <ins><em>http://docs.python.org/modindex.html.</em></ins>
+    Nekotorye moduli prednaznacheny dlia opredelennyh<br>
+    operacionnyh sistem, no bol'shinstvo iz nih krossplatformennye i rabotajut<br>
+    odinakovo na
+    <ins>Linux</ins>
+    ,
+    <ins>Mac</ins>
+    i
+    <ins> Microsoft Windows</ins>
+    . Dlia ispol'zovanija vneshnego modulia<br>
+    neobhodimo importirovat' ego v programmu. Odin iz modulej, postavliaemyh s Python,<br>
+    nazyvaetsia "random". On daet vozmozhnost' generirovat' psevdosluchajnye chisla. My<br>
+    ispol'zuem etot modul' v nashem pervom primere.
+</p>
+<p><code>
+    #=======================================<br>
+    # random_example.ry<br>
+    # Module example using the random module<br>
+    #=======================================<br>
+    import random<br>
+    # print 14 random integers<br>
+    for cntr in range (1, 15):<br>
+        print random.randint(1, 10)</code></p>
+<p>Davajte razberem kod po strokam. Pervye chetyre stroki - eto kommentarii, o kotoryh<br>
+    my govorili v proshlyj raz. Piataja stroka govorit Python, chto nuzhno ispol'zovat'<br>
+modul' "random". My dolzhny javno ukazat' Python na eto.</p>
+<hr>
+<h2>Funkcii</h2>
+<p>Когда мы импортировали модуль random, мы использовали функцию <strong>randint()</strong>. Функция<br>
+    — это блок кода, который создан для того, чтобы вызывать его в программе, обычно,
+    более одного раза.<br>
+    Это упрощает работу над программой и предотвращает набор одного и
+    того же кода снова и снова.<br> Грубо говоря, если вам нужно написать некоторый код
+    больше, чем 1-2 раза, стоит сделать его<br> функцией. Хотя следующие два примера очень
+    простые, это хорошие примеры функций. Теперь<br> мы хотим, скажем, взять два числа,
+    сложить их, перемножить, вычесть одно из другого, затем<br> вывести на экран эти числа и
+    результаты одновременно. Допустим, нам нужно сделать это три<br> раза для трёх наборов
+    чисел. Тогда наш пример будет выглядеть как код ниже.</p>
+<p><code>
+    #silly example
+    print '%d + %d = %d ' % (1,2,1+2)<br>
+    print '%d * %d = %d ' % (1,2,1*2)<br>
+    print '%d - %d = %d ' % (1,2,1-2)<br>
+    print '\n'<br>
+    print '%d + %d = %d ' % (1,4,1+4)<br>
+    print '%d * %d = %d ' % (1,4,1*4)<br>
+    print '%d - %d = %d ' % (1,4,1-4)<br>
+    print '\n'<br>
+    print '%d + %d = %d ' % (10,5,10+5)<br>
+    print '%d * %d = %d ' % (10,5,10*5)<br>
+    print '%d - %d = %d ' % (10,5,10-5)<br>
+    print '\n'</code></p>
+<p>Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при<br>
+    написании, так и при внесении изменений. Вместо этого мы создадим функцию, которую<br>
+    назовём «DoTwo». Она будет каждый раз брать два числа, проводить математические<br>
+    операции и выводить результат. Начнём с ключевого слова «def», которое сигнализирует<br>
+    о том, что мы собираемся определить функцию. После слова «def» добавим название<br>
+    функции и список параметров, если таковые имеются, в круглых скобках. Эту строку<br>
+    необходимо завершить двоеточием. Код функции набирается с отступом. Наш<br>
+    улучшенный простой пример (No2) показан ниже.</p>
+<pre><code>
+    #silly example 2...still silly, but better
+    def DoTwo(num1,num2):
+           print '%d + %d = %d ' % (num1,num2,num1+num2)
+           print '%d * %d = %d ' % (num1,num2,num1*num2)
+           print '%d - %d = %d ' % (num1,num2,num1-num2)
+    print '\n'
+    DoTwo(1,2)
+    DoTwo(1,4)<
+    DoTwo(10,5)</code></pre>
+<p>Как видите, здесь написано меньше кода — 8 строк вместо 12. Если нам нужно будет что-<br>
+    либо поменять в функции, мы сможем сделать это, не создавая проблем для нашей<br>
+
+    программы. Чтобы вызвать функцию, нужно написать её имя и параметры.</p>
+</body>
+</html>
